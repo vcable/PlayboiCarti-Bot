@@ -3,34 +3,14 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import tweepy
 import time
-from os import environ
-
-# The Twitter API keys are in my Heroku environment variables
-# since I don't want them public on Github
-CONSUMER_KEY = environ['CONSUMER_KEY']
-CONSUMER_SECRET = environ['CONSUMER_SECRET']
-ACCESS_KEY = environ['ACCESS_KEY']
-ACCESS_SECRET = environ['ACCESS_SECRET']
-
-# Path variables for Heroku to access Chromedriver
-GOOGLE_CHROME_PATH = "/app/.apt/usr/bin/google_chrome"
-CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
 # Tweet ever 5 hours
 INTERVAL = 15
 
 options = webdriver.ChromeOptions()
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
 
-options.binary_location = GOOGLE_CHROME_PATH
+browser = webdriver.Chrome(ChromeDriverManager().install())
 
-# If running the script on a local machine
-# uncomment the line below and remove the chrome path variables
-#browser = webdriver.Chrome(ChromeDriverManager().install())
-
-browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
-chrome_options=options)
 
 # Gets the randomized sentence
 def get_sentence():
