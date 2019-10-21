@@ -12,13 +12,25 @@ CONSUMER_SECRET = environ['CONSUMER_SECRET']
 ACCESS_KEY = environ['ACCESS_KEY']
 ACCESS_SECRET = environ['ACCESS_SECRET']
 
+# Path variables for Heroku to access Chromedriver
+GOOGLE_CHROME_PATH = "/app/.apt/usr/bin/google_chrome"
+CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
+
 # Tweet ever 5 hours
 INTERVAL = 15
 
-option = webdriver.ChromeOptions()
-option.add_argument("--incognito")
+options = webdriver.ChromeOptions()
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
 
-browser = webdriver.Chrome(ChromeDriverManager().install())
+options.binary_location = GOOGLE_CHROME_PATH
+
+# If running the script on a local machine
+# uncomment the line below and remove the chrome path variables
+#browser = webdriver.Chrome(ChromeDriverManager().install())
+
+browser = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
+chrome_options=options)
 
 # Gets the randomized sentence
 def get_sentence():
