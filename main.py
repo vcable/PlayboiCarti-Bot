@@ -13,7 +13,7 @@ ACCESS_KEY = environ['ACCESS_KEY']
 ACCESS_SECRET = environ['ACCESS_SECRET']
 
 # Tweet ever 5 hours
-INTERVAL = 60 * 60 * 5
+INTERVAL = 15
 
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
