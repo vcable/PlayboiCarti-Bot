@@ -1,3 +1,5 @@
+# Please read the README, and feel free to follow the bot on Twitter @Carti_Bot
+
 import selenium
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -5,7 +7,7 @@ import tweepy
 import time
 
 # Tweet ever 5 hours
-INTERVAL = 15
+INTERVAL = 60 * 60 * 5
 
 options = webdriver.ChromeOptions()
 
@@ -37,6 +39,8 @@ def get_carti():
 
 # Posts the tweet
 def tweet():
+    # Twitter API authorization keys are not included here on Github, since I wouldn't want anyone
+    # doing nefarious things to my app :)
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
