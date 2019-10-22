@@ -1,7 +1,7 @@
 **What is this?**
 
 This is a bot that tweets out randomized sentences that are styled like Playboi Carti's Twitter/Instagram captions.
-It can be found <a href="https://twitter.com/Carti_Bot">here</a>
+It can be found <a href="https://twitter.com/Carti_Bot">here</a>.
 
 **Why did I make this?**
 
