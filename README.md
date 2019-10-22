@@ -9,7 +9,7 @@ I wanted to learn how to use Selenium and this seemed like a great way to do it.
 
 **How does it work?**
 
-This bot is very simple.  Every five hours, it opens randomwordgenerator.com/sentence.php, which generates completely random and usually nonsensical sentences.  Then, the bot opens cartivoice.com, which transforms any text it is given into Carti-speak.  Then, the script takes the Cartified text and tweets it out using the Tweepy library.  
+This bot is very simple.  Every five hours, it opens <a href="https://randomwordgenerator.com/sentence.php">this site</a>, which generates completely random and usually nonsensical sentences.  Then, the bot opens <a href="https://cartivoice.com">cartivoice.com</a>, which transforms any text it is given into Carti-speak.  Then, the script takes the Cartified text and tweets it out using the Tweepy library.  
 
 **Other notes**
 
